@@ -35,7 +35,7 @@
 
 ## التحميل
 
-حمّل ملف **`DontBother-1.0.apk`** من [صفحة الإصدار v1.0](https://github.com/nandxorandor/dont-bother-app/releases/tag/v1.0)، وافتحه على هاتفك (أندرويد 8.0 أو أحدث)، واسمح بتثبيت التطبيقات من هذا المصدر عندما يطلب أندرويد ذلك. ثم افتح التطبيق واتبع البطاقات الصفراء لمنح الأذونات التي يحتاجها.
+حمّل ملف **`DontBother-1.1.apk`** من [صفحة الإصدار v1.1](https://github.com/nandxorandor/dont-bother-app/releases/latest)، وافتحه على هاتفك (أندرويد 8.0 أو أحدث)، واسمح بتثبيت التطبيقات من هذا المصدر عندما يطلب أندرويد ذلك. ثم افتح التطبيق واتبع البطاقات الصفراء لمنح الأذونات التي يحتاجها.
 
 ## لقطات الشاشة
 
@@ -57,8 +57,8 @@
   - **للإيقاف:** انقر مرة أخرى، سيتوقف عن العمل ويعيد هاتفك تماماً إلى الحالة التي كان
     عليها قبل أي قاعدة.
 - **إدارة الأماكن (حيث يتغير وضع الهاتف):**
-  - **أماكن تعتمد على الواي فاي (مثل المسجد إذا كانت تتوفر له شبكة وتعرف كلمة مرورها،
-    المنزل، أو المكتب):** اختر الشبكة من القائمة، امنحها اسماً،
+  - **أماكن تعتمد على الواي فاي (مثل المسجد إذا كانت تتوفر له شبكة (سواء تعرف كلمة مرورها
+    أو حتى لا تعرف)، المنزل، أو المكتب):** اختر الشبكة من القائمة، امنحها اسماً،
     وحدد الوضع المطلوب (صامت، اهتزاز، صوت). بعد حوالي 4 ثوانٍ من اتصال هاتفك بالشبكة،
     يتغير وضع الهاتف.
   - **أماكن تعتمد على الموقع الجغرافي أو لا تتوفر لها شبكة واي فاي (مثل المسجد، المدرسة،
@@ -86,6 +86,14 @@
   - إذا كان وضع عدم الإزعاج مفَعّلاً، فقد يمنع الرنين أو الاهتزاز. بتفعيل خيار "إيقاف وضع
     عدم الإزعاج" في الإعدادات، سيقوم التطبيق بإيقافه مؤقتاً عند الحاجة ليرن الهاتف، مع
     إمكانية إيقاف هذه الميزة إذا كنت تستخدم جدولاً خاصاً للنوم لا تريد مقاطعته.
+- **السؤال قبل التبديل (اختياري):**
+  - عند وصولك إلى مكان أو مغادرته، تظهر نافذة تسألك أولاً مع عد تنازلي وزرّين: "التبديل
+    الآن" و"ليس الآن". إذا كان الهاتف مقفلاً تظهر بملء الشاشة، وإذا كنت تستخدمه تظهر
+    كإشعار في أعلى الشاشة.
+  - تختار مدة الانتظار (10 ث، 30 ث، أو دقيقة)، وماذا يحدث إذا لم تُجب (التبديل على أي حال
+    أو إبقاء الهاتف كما هو)، وطريقة التنبيه (اهتزاز أو صفارة).
+  - "ليس الآن" يُبقي الهاتف كما هو حتى تنتقل إلى مكان آخر. ساعات الليل تُطبَّق دون سؤال،
+    وزر "جرّبها" يعرض نافذة تجريبية لا تغيّر شيئاً.
 
 ## نظرة خلف الكود: الموثوقية والخصوصية
 
@@ -150,8 +158,8 @@ it back when you leave, with no manual switching. In English and Arabic.
 
 ### Download
 
-Get **`DontBother-1.0.apk`** from the
-[v1.0 release](https://github.com/nandxorandor/dont-bother-app/releases/tag/v1.0),
+Get **`DontBother-1.1.apk`** from the
+[latest release](https://github.com/nandxorandor/dont-bother-app/releases/latest),
 open it on your Android phone (Android 8.0 or newer), and allow installing from
 that source when Android asks. Then open the app and follow the yellow cards to
 grant the permissions it needs.
@@ -173,10 +181,12 @@ grant the permissions it needs.
 
 **Places**
 
-3. **A place with Wi-Fi you connect to (a mosque whose Wi-Fi password you
-   know, home, office):** pick the network from the list, name it, and choose
-   Silent, Vibrate or Sound. About 4 seconds after
-   your phone connects to that network, the phone switches.
+3. **A place with Wi-Fi (a mosque with a network, whether or not you know its
+   password; home; office):** while you are there, pick the network from the
+   list, name it, and choose Silent, Vibrate or Sound. The app also remembers
+   the spot where you added it. About 4 seconds after your phone connects to
+   that network, or as soon as you walk back within about 30 m of that spot,
+   the phone switches.
 4. **A place found by its location, or without Wi-Fi you can join (mosque,
    school, someone else's office):** stand there, tap "Where I am standing now", and choose the circle
    size and the mode. The phone switches when you walk into the circle.
@@ -221,28 +231,42 @@ grant the permissions it needs.
     phone can ring. Leave that off if you use a bedtime or focus schedule you
     don't want interrupted.
 
+**Asking first (optional)**
+
+17. **Ask before switching** (Settings → Ask first): when you arrive at a place
+    or leave it, a popup asks first, with a countdown and **Switch now** /
+    **Not now**. With the phone locked it fills the screen; while you are using
+    the phone it shows as a banner at the top.
+18. **Your choices:** time to answer (10 s, 30 s or 1 min); if you don't
+    answer, switch anyway or leave the phone as it is; vibrate or beep to get
+    your attention (a beep only while the phone is on Sound).
+19. **Not now** keeps the phone as it is until you go somewhere else. Night
+    hours switch without asking. **Try it** shows a sample that changes
+    nothing.
+
 **Seeing what it's doing**
 
-17. **Status card and notification:** where you are and the phone's mode, right
+20. **Status card and notification:** where you are and the phone's mode, right
     now.
-18. **Activity log** (Settings): the last 30 changes, with day and time.
+21. **Activity log** (Settings): the last 30 changes, with day and time.
 
 **Behind the scenes**
 
-19. **After a restart or an app update** it starts again by itself (needs
+22. **After a restart or an app update** it starts again by itself (needs
     location set to "Allow all the time").
-20. **A missing permission** shows a yellow card on the main screen with a Fix
+23. **A missing permission** shows a yellow card on the main screen with a Fix
     button; Settings → Permissions shows what is allowed.
-21. **Language:** English | عربي at the bottom switches the whole app, and
+24. **Language:** English | عربي at the bottom switches the whole app, and
     Arabic mirrors the layout right to left.
-22. **Privacy:** no internet access at all; your places, contacts and activity
+25. **Privacy:** no internet access at all; your places, contacts and activity
     never leave the phone.
 
 **What it does not do**
 
-- Being *near* a Wi-Fi network doesn't count: the phone must be *connected* to
-  it. Otherwise use a location place.
-- With Wi-Fi switched off, only location places work.
+- The app never senses a Wi-Fi network from a distance. A network you haven't
+  joined works through the spot saved when you added it, so add it while you
+  are standing there.
+- With Wi-Fi switched off, places work only through their saved spot.
 - With the app off, nothing changes: your phone stays exactly as you set it.
 
 ### Why it asks for these permissions
